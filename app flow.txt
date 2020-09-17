@@ -1,0 +1,14 @@
+Hoc
+	-Auxiliary
+
+Containers
+	- Star War Movies
+components
+
+	1. - toolbar
+		-filter
+		-search
+	2. Movie List
+	
+	3. Movie Description
+
