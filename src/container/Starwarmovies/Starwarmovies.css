@@ -1,0 +1,16 @@
+.Starwarmovies_wrapper {
+  width: 100%;
+}
+.Starwarmovies_container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.Starwarmovies_container > div {
+  text-align: center;
+  flex-flow: column;
+  width: 49%;
+  align-content: center;
+  border-left: 1px solid #cccccc;
+}
