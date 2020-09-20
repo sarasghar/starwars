@@ -43,7 +43,7 @@ class MovieRenderer extends Component {
       this.setState({
         sortedFilmList: searchResult
       });
-    } else if (userSearch.length == 0) {
+    } else if (userSearch.length === 0) {
       this.setState({ sortedFilmList: this.props.filmList }); //show all films if search field is empty
     }
   };
