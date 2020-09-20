@@ -1,0 +1,17 @@
+.Toolbar_container {
+  display: flex;
+  width: 100%;
+  background-color: #ededed;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 10px 0px 10px 0px;
+}
+
+.SortBy {
+  flex: 0.5;
+  margin-left: 10px;
+}
+
+.Search {
+  flex: 6;
+}

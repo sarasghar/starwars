@@ -1,18 +1,20 @@
 import React from "react";
-import classes from "./Filter.css";
-
+import classes from "./SortBy.css";
+//using Material UI for Displaying Sort By Menu
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 
-const filter = props => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+const sortBy = props => {
+  const [anchorEl, setAnchorEl] = React.useState(null); //to use state variables in functional component
 
   const handleClick = event => {
+    // to display the dropdown menu on click
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
+    //hides menu when this method is called
     setAnchorEl(null);
   };
   return (
@@ -22,9 +24,12 @@ const filter = props => {
         aria-haspopup="true"
         onClick={handleClick}
         variant="outlined"
-        size="large"
+        size="medium"
         style={{
-          backgroundColor: "#ffffff"
+          backgroundColor: "#ffffff",
+          textTransform: "capitalize",
+          marginTop: "8px",
+          marginBottom: "4px"
         }}
       >
         Sort By..
@@ -36,13 +41,14 @@ const filter = props => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
         className={classes.Menu}
+        MenuListProps={{ onMouseLeave: handleClose }}
       >
-        <MenuItem onClick={handleClose}>Sort By</MenuItem>
-        <MenuItem onClick={handleClose}>Years</MenuItem>
-        <MenuItem onClick={handleClose}>Episodes</MenuItem>
+        <MenuItem onClick={handleClose}></MenuItem>
+        <MenuItem onClick={props.dateSort}>Years</MenuItem>
+        <MenuItem onClick={props.episodeSort}>Episodes</MenuItem>
       </Menu>
     </div>
   );
 };
 
-export default filter;
+export default sortBy;

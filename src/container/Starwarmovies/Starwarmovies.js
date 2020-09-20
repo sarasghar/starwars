@@ -1,24 +1,28 @@
 import React from "react";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
-import Toolbar from "../../components/Toolbar/Toolbar";
-import MovieList from "../../components/MovieList/MovieList";
-import MovieDescription from "../../components/MovieDescription/MovieDescription";
+import MovieRenderer from "../../components/MovieRenderer/MovieRenderer";
+import Films from "../../films"; //json data
 
-import classes from "./Starwarmovies.css";
+import classes from "./Starwarmovies.css"; //using CSS modules for styling
 
-const starwarmovies = props => (
-  <Aux>
-    <div className={classes.Starwarmovies_wrapper}>
-      <Toolbar />
-      <div className={classes.Starwarmovies_container}>
-        <div>
-          <MovieList />
-        </div>
-        <div>
-          <MovieDescription />
-        </div>
+const starwarmovies = props => {
+  const filmList = Films.map(film => {
+    return {
+      episode: film.fields.episode_id,
+      title: film.fields.title,
+      release_date: film.fields.release_date,
+      description: film.fields.opening_crawl,
+      director: film.fields.director
+    };
+  });
+
+  return (
+    <Aux>
+      <div className={classes.Starwarmovies_wrapper}>
+        <MovieRenderer filmList={filmList} /> 
       </div>
-    </div>
-  </Aux>
-);
+    </Aux>
+  );
+};
+
 export default starwarmovies;
