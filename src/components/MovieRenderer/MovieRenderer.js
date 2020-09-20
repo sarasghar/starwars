@@ -18,7 +18,7 @@ class MovieRenderer extends Component {
     let filmListToBeSorted = [...this.state.sortedFilmList]; //for changing state immutably
     filmListToBeSorted = filmListToBeSorted
       .slice()
-      .sort((a, b) => b.release_date > a.release_date);
+      .sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
 
     this.setState({ sortedFilmList: filmListToBeSorted });
   };
@@ -27,7 +27,7 @@ class MovieRenderer extends Component {
     let filmListToBeSorted = [...this.state.sortedFilmList];
     filmListToBeSorted = filmListToBeSorted
       .slice()
-      .sort((a, b) => a.episode > b.episode);
+      .sort((a, b) => a.episode - b.episode);
 
     this.setState({ sortedFilmList: filmListToBeSorted });
   };
